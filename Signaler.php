@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <title>Signaler un déchet</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/templatemo-scholar.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/swiper.min.css" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./vendor/img/ico/apple-touch-icon.png" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="./vendor/img/ico/favicon-32x32.png" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="./vendor/img/ico/favicon-16x16.png" />
+</head>
+
+<style>
+  /* Cache l'input natif */
+  input[type="file"] {
+    display: none;
+  }
+
+  /* Conteneur en flex pour alignement horizontal */
+  fieldset {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Espace entre les éléments */
+    border: none;
+    padding: 0;
+  }
+
+  /* Style du bouton personnalisé */
+  .custom-file-upload {
+    background-color: #57c08f;
+    /* Vert éco */
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    /* Bordure grise */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, border 0.3s;
+    white-space: nowrap;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #4aae80;
+    border-color: #bbb;
+  }
+
+  /* Style du nom du fichier */
+  #file-name {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  /* Conteneur pour le styliser proprement */
+  .custom-select-container {
+    position: relative;
+    width: auto;
+    /* Ajuste la largeur selon tes besoins */
+  }
+
+  /* Stylisation du select */
+  select {
+    appearance: none;
+    /* Supprime le style natif du navigateur */
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #57c08f;
+    /* Vert éco */
+    border: 2px solid #ccc;
+    /* Bordure grise */
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s, border 0.3s;
+  }
+
+  /* Effet au survol */
+  select:hover {
+    background-color: #4aae80;
+    border-color: #bbb;
+  }
+
+  /* Effet au focus */
+  select:focus {
+    border-color: #aaa;
+  }
+
+  /* Ajout d'un petit icône flèche vers le bas */
+  .custom-select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+  }
+
+  .location-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Style de l'input */
+  #location {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    /* Bordures arrondies */
+    outline: none;
+  }
+
+  /* Style du bouton */
+  .location-btn {
+    position: absolute;
+    right: 5px;
+    background-color: #57c08f;
+    /* Couleur verte */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* Bouton rond */
+    margin-bottom: 27px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+
+  .location-btn:hover {
+    background-color: #218838;
+  }
+</style>
+
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <p
+                style="
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: white;
+                    border-right: 2px solid white;
+                    padding-right: 170px; /* Augmenté pour repousser la bordure */
+                    margin-bottom: 10px;
+                    width: 400px; /* Augmenté pour plus d'espace */
+                    display: flex;
+                    align-items: center;
+                    gap: 15px; /* Augmenté pour plus d'espace entre le logo et le texte */
+                  ">
+                <img
+                  style="width: 40%; height: auto"
+                  src="./vendor/img/logo.png"
+                  alt="" />
+                Aline EcoPro
+              </p>
+            </a>
+            <!-- ***** Logo End ***** -->
+
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section">
+                <a href="index.html#top" style="font-weight: bold">Accueil</a>
+              </li>
+              <li class="scroll-to-section">
+                <a href="index.html#services" style="font-weight: bold">A propos de nous</a>
+              </li>
+              <li class="scroll-to-section">
+                <a href="index.html#contact" style="font-weight: bold">Contactez-nous !</a>
+              </li>
+              <li>
+                <a
+                  href="./Signaler.html"
+                  style="font-weight: bold"
+                  class="active">Signaler un dechet !</a>
+              </li>
+            </ul>
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="headd">
+    <div class="container">
+      <div class="col-lg-12"></div>
+    </div>
+  </div>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="contact-us section">
+    <div class="container" style="margin-top: 7%">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h5 style="color: rgb(24, 161, 65)">Signaler un dechet</h5>
+            <h2>
+              Gardez votre environnement propre pour participer au
+              développement durable !
+            </h2>
+
+            <div class="special-offer">
+              <span class="offer"><img
+                  style="height: auto; width: 80%"
+                  src="./vendor/img/logo.png"
+                  alt="" /></span>
+              <h6><em>Protéger</em> l'environnement !</h6>
+              <h4><em>Sauver</em> la nature !</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" method="post" action="traitement.php" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-lg-12">
+                  <fieldset
+                    style="margin: 20px"
+                    class="custom-select-container w-full max-w-md mx-auto px-4">
+                    <select id="category" name="category">
+                      <option
+                        value=""
+                        style="display: none"
+                        disabled
+                        selected>
+                        Choisissez un type de déchet
+                      </option>
+
+                      <!-- Déchets ménagers -->
+                      <optgroup label="🗑 Déchets ménagers">
+                        <option value="dechet-organique">
+                          Déchets organiques
+                        </option>
+                        <option value="plastiques">Plastiques</option>
+                        <option value="papier-carton">
+                          Papiers et cartons
+                        </option>
+                        <option value="verre">Verres</option>
+                        <option value="metaux">Métaux</option>
+                        <option value="textiles">Textiles</option>
+                        <option value="sanitaires">Déchets sanitaires</option>
+                      </optgroup>
+
+                      <!-- Déchets industriels -->
+                      <optgroup label="🏭 Déchets industriels">
+                        <option value="residus-production">
+                          Déchets de production
+                        </option>
+                        <option value="dechets-dangereux">
+                          Déchets toxiques et dangereux
+                        </option>
+                        <option value="dechets-electroniques">
+                          Déchets électroniques
+                        </option>
+                      </optgroup>
+
+                      <!-- Déchets du BTP -->
+                      <optgroup label="🏗 Déchets du BTP">
+                        <option value="gravats">Gravats</option>
+                        <option value="bois">Bois</option>
+                        <option value="metaux-btp">Métaux</option>
+                        <option value="platres">Plâtres</option>
+                        <option value="isolation">Déchets d’isolation</option>
+                      </optgroup>
+
+                      <!-- Déchets médicaux -->
+                      <optgroup label="🏥 Déchets médicaux">
+                        <option value="infectieux">Déchets infectieux</option>
+                        <option value="medicaments">
+                          Médicaments périmés
+                        </option>
+                        <option value="produits-chimiques">
+                          Produits chimiques
+                        </option>
+                      </optgroup>
+
+                      <!-- Déchets dangereux -->
+                      <optgroup label="⚠ Déchets dangereux">
+                        <option value="piles-batteries">
+                          Piles et batteries
+                        </option>
+                        <option value="peintures-solvants">
+                          Peintures, solvants, colles
+                        </option>
+                        <option value="produits-chimiques-danger">
+                          Produits chimiques
+                        </option>
+                        <option value="huiles-usagees">Huiles usagées</option>
+                        <option value="ampoules-neons">
+                          Ampoules et néons
+                        </option>
+                      </optgroup>
+
+                      <!-- Déchets agricoles -->
+                      <optgroup label="🚜 Déchets agricoles">
+                        <option value="dechets-organique-agri">
+                          Déchets organiques
+                        </option>
+                        <option value="emballages-pesticides">
+                          Emballages de pesticides et engrais
+                        </option>
+                        <option value="plastiques-agricoles">
+                          Plastiques agricoles
+                        </option>
+                      </optgroup>
+
+                      <!-- Déchets électroniques -->
+                      <optgroup label="🔌 Déchets électroniques">
+                        <option value="electromenager">
+                          Électroménagers
+                        </option>
+                        <option value="appareils-informatiques">
+                          Appareils informatiques
+                        </option>
+                        <option value="televisions-ecrans">
+                          Télévisions et écrans
+                        </option>
+                      </optgroup>
+
+                      <!-- Déchets verts -->
+                      <optgroup label="🌿 Déchets verts">
+                        <option value="feuilles-mortes">
+                          Feuilles mortes
+                        </option>
+                        <option value="branches">
+                          Branches, tailles d’arbustes
+                        </option>
+                        <option value="herbes-coupees">Herbes coupées</option>
+                      </optgroup>
+
+                      <!-- Autres -->
+                      <optgroup label="🎁 Autres">
+                        <option value="autres">
+                          Autres (Bac à Ordures ou autres......)
+                        </option>
+                      </optgroup>
+                    </select>
+                  </fieldset>
+                </div>
+
+                <div class="col-lg-12">
+                  <fieldset style="margin: 20px">
+                    <label for="file" class="custom-file-upload">
+                      Choisir une photo
+                    </label>
+                    <input
+                      type="file"
+                      name="file"
+                      id="file"
+                      accept="image/*"
+                      required
+                      onchange="updateFileName()" />
+                    <span id="file-name">Aucun fichier sélectionné</span>
+                  </fieldset>
+                </div>
+
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea
+                      name="message"
+                      id="message"
+                      placeholder="Decrivrez le dechet..."></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset class="location-container">
+                    <input
+                      type="text"
+                      name="location"
+                      id="location"
+                      placeholder="Localisation du déchet... (positionau GPS)"
+                      required
+                      readonly />
+                    <button
+                      type="button"
+                      class="location-btn"
+                      onclick="getLocation()">
+                      📍
+                    </button>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input
+                      type="text"
+                      name="tel"
+                      id="tel"
+                      placeholder="Votre numéro de téléphone..."
+                      required />
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button
+                      type="submit"
+                      id="form-submit"
+                      class="orange-button">
+                      Signaler
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p id="date"></p>
+        <p>
+          Copyright © <span id="year"></span> Aline Eco Pro. Tout Droits
+          Réservés.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const yearSpan = document.createElement("span"); // Crée un élément <span>
+      yearSpan.textContent = new Date().getFullYear(); // Récupère l'année actuelle
+      document.getElementById("year").appendChild(yearSpan); // Ajoute l'année dans le footer
+    });
+  </script>
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            document.getElementById("location").value =
+              position.coords.latitude + ", " + position.coords.longitude;
+          },
+          function(error) {
+            alert("Impossible de récupérer la localisation !");
+          }
+        );
+      } else {
+        alert("La géolocalisation n'est pas supportée par ce navigateur.");
+      }
+    }
+  </script>
+  <script>
+    function updateFileName() {
+      const input = document.getElementById("file");
+      const fileName =
+        input.files.length > 0 ?
+        input.files[0].name :
+        "Aucun fichier sélectionné";
+      document.getElementById("file-name").textContent = fileName;
+    }
+  </script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
