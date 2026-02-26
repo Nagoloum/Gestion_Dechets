@@ -1,5 +1,5 @@
-CREATE DATABASE alineEcoPro;
-USE alineEcoPro;
+CREATE DATABASE EcoPro;
+USE EcoPro;
 
 CREATE TABLE usager (
     id_usager INT PRIMARY KEY AUTO_INCREMENT,

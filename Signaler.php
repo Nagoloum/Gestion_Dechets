@@ -210,7 +210,7 @@
                   style="width: 40%; height: auto"
                   src="./vendor/img/logo.png"
                   alt="" />
-                Aline EcoPro
+                 EcoPro
               </p>
             </a>
             <!-- ***** Logo End ***** -->
@@ -473,7 +473,7 @@
       <div class="col-lg-12">
         <p id="date"></p>
         <p>
-          Copyright © <span id="year"></span> Aline Eco Pro. Tout Droits
+          Copyright © <span id="year"></span>  Eco Pro. Tout Droits
           Réservés.
         </p>
       </div>

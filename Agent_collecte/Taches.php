@@ -287,7 +287,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); ?>
                   style="width: 40%; height: auto"
                   src="./vendor/img/logo.png"
                   alt="Logo" />
-                Aline EcoPro
+                 EcoPro
               </p>
             </a>
             <!-- ***** Logo End ***** -->
