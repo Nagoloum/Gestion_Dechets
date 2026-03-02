@@ -15,7 +15,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 
 $_SESSION['LAST_ACTIVITY'] = time();
 
-include "conn.php";
+require_once __DIR__ . "/../config/db.php";
 
 $agent = null;
 
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['modage'])) {
     <link rel="icon" type="image/png" sizes="32x32" href="../vendor/img/ico/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../vendor/img/ico/favicon-16x16.png" />
 
-    <?php include "tete.php"; ?>
+    <?php include __DIR__ . "/includes/header.php"; ?>
 </head>
 
 <body>

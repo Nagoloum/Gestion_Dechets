@@ -1,5 +1,5 @@
 <?php
-include "conn.php";
+require_once __DIR__ . "/config/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $type_de_dechets = htmlspecialchars($_POST['category']);

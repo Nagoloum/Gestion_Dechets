@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conn.php";
+require_once __DIR__ . "/../config/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['conne'])) {
   $user_name = trim(htmlspecialchars($_POST['user']));

@@ -1,5 +1,5 @@
 <?php
-include "./conn.php"; // Connexion à la base de données
+require_once __DIR__ . "/../config/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_dechet = intval($_POST["id_dechet"]);

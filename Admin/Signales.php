@@ -33,7 +33,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
     <title>Admin - Déchets Signalés</title>
 
-    <?php include "tete.php"; ?>
+    <?php include __DIR__ . "/includes/header.php"; ?>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Déchets Signalés</h1>
@@ -61,7 +61,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         </thead>
                         <tbody>
                             <?php
-                            include "./conn.php";
+                            require_once __DIR__ . "/../config/db.php";
 
                             $sql = "SELECT DISTINCT d.id_dechets, d.type_de_dechets, d.quantite, d.descriptions, 
                                    d.location, d.photo_path, r.statut 
@@ -122,7 +122,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         <label for="agent">Sélectionner un agent :</label>
                         <select name="id_agent" id="agent" class="form-control">
                             <?php
-                            include "./conn.php";
+                            require_once __DIR__ . "/../config/db.php";
                             $sql_agents = "SELECT id_agent, nom, email FROM agent_collecte WHERE statut = 'libre'";
                             $result_agents = $conn->query($sql_agents);
                             while ($agent = $result_agents->fetch_assoc()) {

@@ -95,11 +95,6 @@
                                         header('location: index.php');
                                         exit();
                                     }
-                                    include "./conn.php";
-
-                                    $login = $_SESSION['admin_name'];
-
-                                    $conn->close();
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"

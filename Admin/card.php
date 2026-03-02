@@ -1,5 +1,5 @@
 <?php 
-    include "./conn.php"; 
+    require_once __DIR__ . "/../config/db.php"; 
 
     // Comptages des différents éléments demandés
     $usagers = "SELECT count(*) AS total_usagers FROM usager";

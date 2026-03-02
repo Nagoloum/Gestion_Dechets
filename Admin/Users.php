@@ -33,7 +33,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
     <title>Admin - Usagers</title>
 
-    <?php include "tete.php"; ?>
+    <?php include __DIR__ . "/includes/header.php"; ?>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Usagers</h1>
@@ -54,7 +54,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             </tr>
                         </thead>
                         <?php
-                        include "./conn.php";
+                        require_once __DIR__ . "/../config/db.php";
 
                         $sql2 = "SELECT DISTINCT * FROM usager";
                         $result2 = $conn->query($sql2);

@@ -33,7 +33,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
     <title>Admin - Déchets Récupérés</title>
 
-    <?php include "tete.php"; ?>
+    <?php include __DIR__ . "/includes/header.php"; ?>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Déchets Récupérés</h1>
@@ -62,7 +62,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         </thead>
                         <tbody>
                             <?php
-                            include "./conn.php";
+                            require_once __DIR__ . "/../config/db.php";
 
                             $sql = "SELECT d.id_dechets, d.type_de_dechets, d.quantite, d.descriptions, 
                                d.location, d.photo_path, a.nom AS agent_nom, r.photo AS photo_recup, r.statut AS statut_recup

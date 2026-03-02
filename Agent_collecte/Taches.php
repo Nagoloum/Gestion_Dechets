@@ -324,7 +324,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); ?>
           </div>
         </div>
         <?php
-        include "./conn.php";
+        require_once __DIR__ . "/../config/db.php";
         $id_agent = $_SESSION['agent_id'];
 
         $sql = "SELECT d.id_dechets, d.type_de_dechets, d.photo_path, d.location, d.descriptions

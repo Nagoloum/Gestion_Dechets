@@ -33,7 +33,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
     <title>Admin - Agents de collecte</title>
 
-    <?php include "tete.php"; ?>
+    <?php include __DIR__ . "/includes/header.php"; ?>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Agents de collecte</h1>
@@ -66,7 +66,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             </tr>
                         </thead>
                         <?php
-                        include "./conn.php";
+                        require_once __DIR__ . "/../config/db.php";
 
                         if (isset($_GET['id_agent'])) {
 
@@ -171,7 +171,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <?php
 
     if (isset($_POST['Agentadd'])) {
-        include "./conn.php";
+        require_once __DIR__ . "/../config/db.php";
 
         $nom = trim($_POST['nom']);
         $mot_de_passe = trim($_POST['passw']);

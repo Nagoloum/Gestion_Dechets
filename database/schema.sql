@@ -48,3 +48,4 @@ CREATE TABLE recuperer (
     FOREIGN KEY (id_dechets) REFERENCES dechets (id_dechets) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (id_agent) REFERENCES agent_collecte (id_agent) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
